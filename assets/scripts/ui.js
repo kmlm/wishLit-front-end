@@ -25,29 +25,13 @@ const signInSuccess = function (data) {
 //   document.getElementById('sign-in-form').reset()
 // }
 //
-// const signOutSuccess = function () {
-//   $('.userMessage').text('Thanks for Playing! Sign in if you wish to play again.')
-//   store.user = null
-//   $('#sign-in-form').show()
-//   $('#sign-in-message').show()
-//   $('#new-user-form').show()
-//   $('#sign-up-message').show()
-//   $('.password-change').show()
-//   $('#change-password-message').show()
-//   $('#change-password-form').show()
-//   $('#password-change-message').show()
-//   $('#password-change-message').text('')
-//   $('.password-change').css('display', 'none')
-//   $('.signOut').css('display', 'none')
-//   $('.newGame').css('display', 'none')
-//   $('#change-password-button').hide()
-//   $('#numGames-message').hide()
-//   $('#message').show()
-//   $('#message').text('')
-//   $('#change-password-message').text('Change your password here')
-//   $('#successMessage').text('')
-// }
-//
+const signOutSuccess = function () {
+  console.log('ui success')
+  console.log(store.user)
+  store.user = null
+  console.log(store.user)
+}
+
 const changePasswordSuccess = function (data) {
   console.log('ui success')
   document.getElementById('change-password-form').reset()
@@ -88,7 +72,7 @@ module.exports = {
   // signUpFailure,
   signInSuccess,
   // signInFailure,
-  // signOutSuccess,
+  signOutSuccess,
   changePasswordSuccess
   // changePasswordFailure,
   // createGameSuccess,

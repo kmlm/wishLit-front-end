@@ -20,6 +20,7 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
+  console.log('api sucess')
   return $.ajax({
     url: config.apiOrigin + 'sign-out/' + store.user.id,
     method: 'DELETE',
