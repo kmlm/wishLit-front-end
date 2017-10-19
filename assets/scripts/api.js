@@ -44,6 +44,7 @@ const changePassword = function (data) {
 
 const addToList = function (data) {
   console.log('api sucess')
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + 'books/',
     method: 'POST',

@@ -43,7 +43,7 @@ const onAddToList = function (event) {
   const data = getFormFields(this)
   api.addToList(data)
     .then(ui.addToListSuccess)
-    .catch(ui.addToListSuccess)
+    .catch(ui.addToListFailure)
 }
 
 module.exports = {

@@ -58,6 +58,17 @@ const changePasswordFailure = function () {
   document.getElementById('change-password-form').reset()
 }
 
+const addToListSuccess = function () {
+  document.getElementById('lit-input-form').reset()
+  $('#addLitMessage').text("")
+  document.getElementById('add-lit-closure-button').click()
+}
+
+const addToListFailure = function () {
+  $('#addLitMessage').text("There are some fields missing for your Lit!")
+  // document.getElementById('lit-input-form').reset()
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -65,5 +76,7 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  addToListSuccess,
+  addToListFailure
 }
