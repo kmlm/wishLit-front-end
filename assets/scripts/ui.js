@@ -4,27 +4,31 @@ const signUpSuccess = function (data) {
   store.user = data.user
   console.log(data)
   console.log(data.user)
+  document.getElementById('sign-up-close-button').click()
+  $('#sign-up-message').text('')
 }
 
-// const signUpFailure = function () {
-//   $('#successMessage').text('Unable to sign up with that information')
-//   document.getElementById('new-user-form').reset()
-// }
-//
+const signUpFailure = function () {
+  $('#sign-up-message').text('Unable to sign up with that information')
+  document.getElementById('new-user-form').reset()
+}
+
 const signInSuccess = function (data) {
   console.log('ui success')
   store.user = data.user
   console.log(data)
   console.log(data.user)
-  // document.getElementById('sign-in-form').reset()
-  // document.getElementById('create-game-button').click() // triggers new game button to ensure that createGame runs on sign in
+  document.getElementById('sign-in-form').reset()
+  document.getElementById('sign-up-close-button').click()
+  document.getElementById('sign-in-close-button').click()
+  $('#sign-in-message').text('')
 }
-//
-// const signInFailure = function () {
-//   $('#successMessage').text('Invalid Password / Username')
-//   document.getElementById('sign-in-form').reset()
-// }
-//
+
+const signInFailure = function () {
+  $('#sign-in-message').text('Invalid Password / Username')
+  document.getElementById('sign-in-form').reset()
+}
+
 const signOutSuccess = function () {
   console.log('ui success')
   console.log(store.user)
@@ -35,50 +39,21 @@ const signOutSuccess = function () {
 const changePasswordSuccess = function (data) {
   console.log('ui success')
   document.getElementById('change-password-form').reset()
+  document.getElementById('change-password-close-button').click()
+  $('#password-change-message').text('')
 }
-//
-// const changePasswordFailure = function () {
-//   $('#password-change-message').show()
-//   $('#successMessage').text('')
-//   $('#password-change-message').text('Unable to change password. Please verify your current password.')
-//   document.getElementById('change-password-form').reset()
-// }
-//
-// const createGameSuccess = function (data) {
-//   $('.userMessage').text('X goes first so click a square to begin')
-//   store.game = data
-// }
-//
-// const createGameFailure = function () {
-// }
-//
-// const addToGameSuccess = function (data) {
-//   store.game = data
-// }
-//
-// const addToGameFailure = function () {
-// }
-//
-// const showAllGamesSuccess = function (data) {
-//   $('#numGames-message').show()
-//   $('#numGames-message').text('You have played ' + data.games.length + ' games!')
-// }
-//
-// const showAllGamesFailure = function () {
-// }
+
+const changePasswordFailure = function () {
+  $('#password-change-message').text('Unable to change password. Please verify your current password.')
+  document.getElementById('change-password-form').reset()
+}
 
 module.exports = {
   signUpSuccess,
-  // signUpFailure,
+  signUpFailure,
   signInSuccess,
-  // signInFailure,
+  signInFailure,
   signOutSuccess,
-  changePasswordSuccess
-  // changePasswordFailure,
-  // createGameSuccess,
-  // createGameFailure,
-  // addToGameSuccess,
-  // addToGameFailure,
-  // showAllGamesSuccess,
-  // showAllGamesFailure
+  changePasswordSuccess,
+  changePasswordFailure
 }
