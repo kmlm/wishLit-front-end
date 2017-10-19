@@ -37,10 +37,19 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const onAddToList = function (event) {
+  event.preventDefault()
+  console.log('event success')
+  const data = getFormFields(this)
+  api.addToList(data)
+    .then(ui.addToListSuccess)
+    .catch(ui.addToListSuccess)
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
+  onAddToList,
   onChangePassword
 }
