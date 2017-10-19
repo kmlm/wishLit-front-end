@@ -46,10 +46,19 @@ const onAddToList = function (event) {
     .catch(ui.addToListFailure)
 }
 
+const returnMyLit = function (event) {
+  event.preventDefault()
+  console.log('event success')
+  api.returnLit()
+    .then(ui.returnLitSuccess)
+    .catch(ui.returnLitFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onAddToList,
-  onChangePassword
+  onChangePassword,
+  returnMyLit
 }
