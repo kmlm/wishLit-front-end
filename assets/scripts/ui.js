@@ -26,6 +26,7 @@ const signInSuccess = function (data) {
   $('#sign-out-button').show()
   $('#landing-sign-in').hide()
   $('#landing-sign-up').hide()
+  $('#hidden-until-sign-in').show()
 }
 
 const signInFailure = function () {
@@ -42,6 +43,7 @@ const signOutSuccess = function () {
   $('#landing-sign-up').show()
   $('#landing-change-password').hide()
   $('#sign-out-button').hide()
+  $('#hidden-until-sign-in').hide()
 }
 
 const changePasswordSuccess = function (data) {
