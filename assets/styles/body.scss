@@ -1,0 +1,56 @@
+// .content {
+//   // display: none;
+// }
+
+* {
+  font-family: 'Cinzel', serif;
+}
+
+.container-fluid {
+    background-color: #F5FFFE;
+}
+
+h1 {
+  text-align: center;
+}
+
+// hr {
+//   height: 20px;
+// }
+
+p {
+  // text-align: center;
+}
+.landing-buttons {
+  text-align: center;
+  // border-bottom-style: double;
+  // border-bottom-color: black;
+  // padding-bottom: 50 px;
+  // need a way to push the border down
+}
+.cards {
+  text-align: center;
+  // margin: 0 auto;
+  // position: relative;
+  // align-items: center;
+  // justify-content: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mylist {
+  // text-align: right;
+  border-style: double;
+  border-color: black;
+  margin-top: 50px;
+  // display: none;
+  overflow-y: scroll;
+  height: 200px;
+  width: auto
+}
+
+.spaceBetween {
+  height: 50px;
+}
