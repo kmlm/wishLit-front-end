@@ -168,6 +168,60 @@
           </div>
 
 
+            <!-- Content Displayed after Sign In -->
+            <div class='cards'>
+
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="..." alt="image here?">
+                <div class="card-block">
+                  <h4 class="card-title"> Add a title to your list! </h4>
+                  <p class="card-text"></p>
+                  <button data-toggle="modal" data-target="#addLitModal" class="btn btn-primary">addLit</button>
+                </div>
+
+              <!-- MODAL for ADD LIT -->
+
+              <div class="modal fade" id="addLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Please Fill Out All Fields</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <!-- LIT INPUT FIELDS within Modal -->
+
+                      <form id='lit-input-form'>
+                        <input class='myListFields' type='lit field' name="credentials[email]" placeholder="Title">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='lit field' name="credentials[password]" placeholder="Author">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='lit field' name="credentials[password]" placeholder="isbn">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='lit field' name="credentials[password]" placeholder="Price">
+                        <br>
+                        <br>
+                        <input class='submitButton' type="submit" name='submit' value='Add Lit'>
+                      </form>
+                      <br>
+                      <section id='addLitMessage'> TEST </section>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
 
 
 
