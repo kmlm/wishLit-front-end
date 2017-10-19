@@ -26,7 +26,7 @@
 
           <!-- Button Sign Up-->
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+          <button id='landing-sign-up' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
         Sign Up
       </button>
 
@@ -61,19 +61,13 @@
                     <input class='text' type='password' name="credentials[password]" placeholder="Password">
                     <input class='submitButton' type="submit" name='submit' value='Sign In'>
                   </form>
-
-
                   <br>
                   <br>
                   <section id='sign-up-message'></section>
 
-
-
-
                 </div>
                 <div class="modal-footer">
                   <button id='sign-up-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
                 </div>
               </div>
             </div>
@@ -81,7 +75,7 @@
 
           <!-- Button Sign In -->
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+          <button id='landing-sign-in' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
         Sign In
       </button>
 
@@ -112,19 +106,18 @@
                 </div>
                 <div class="modal-footer">
                   <button id='sign-in-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Button Sign Up-->
+          <!-- Button Change Password-->
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+          <button id='landing-change-password' type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
       Change Password
       </button>
 
-          <!-- Modal Sign Up -->
+          <!-- Modal Change Password -->
           <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -148,7 +141,6 @@
                 </div>
                 <div class="modal-footer">
                   <button id='change-password-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
                 </div>
               </div>
             </div>
