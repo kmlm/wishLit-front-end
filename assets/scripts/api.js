@@ -55,10 +55,22 @@ const addToList = function (data) {
   })
 }
 
+const returnLit = function () {
+  console.log('api sucess')
+  return $.ajax({
+    url: config.apiOrigin + 'books/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  addToList
+  addToList,
+  returnLit
 }
