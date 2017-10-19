@@ -50,7 +50,6 @@ const signInSuccess = function (data) {
 //
 const changePasswordSuccess = function (data) {
   console.log('ui success')
-  console.log(data)
   document.getElementById('change-password-form').reset()
 }
 //
