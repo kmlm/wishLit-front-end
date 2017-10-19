@@ -20,6 +20,148 @@
       </nav>
 
 
+      <!-- MODAL BUTTONS -->
+
+        <div class="landing-buttons">
+
+          <!-- Button Sign Up-->
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button>
+
+
+          <!-- Modal Sign Up -->
+          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Sign Up modal content -->
+
+                  <!-- Sign up top -->
+                  <section id='sign-up-message'> </section>
+                  <form id='new-user-form'>
+                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
+                    <input class='text' type='text' name="credentials[password]" placeholder="Password">
+                    <input class='text' type='text' name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    <input class='submitButton' type="submit" name='submit' value='Sign Up'>
+                  </form>
+                  <br>
+
+                  <!-- Sign in Below -->
+
+                  <form id='sign-in-form'>
+                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
+                    <input class='text' type='password' name="credentials[password]" placeholder="Password">
+                    <input class='submitButton' type="submit" name='submit' value='Sign In'>
+                  </form>
+
+
+                  <br>
+                  <br>
+                  <section id='sign-up-message'> TEST</section>
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Sign In -->
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+        Sign In
+      </button>
+
+          <!-- Modal Sign In -->
+
+          <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sign In Here</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+
+                  <!-- Sign In Section within Modal -->
+
+                  <form id='sign-in-form'>
+                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
+                    <input class='text' type='password' name="credentials[password]" placeholder="Password">
+                    <input class='submitButton' type="submit" name='submit' value='Sign In'>
+                  </form>
+                  <br>
+                  <section id='sign-in-message'> TEST </section>
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Sign Up-->
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+      Change Password
+      </button>
+
+          <!-- Modal Sign Up -->
+          <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Change Password modal content -->
+
+                  <form id='change-password-form'>
+                    <input class='text' type='text' name="passwords[old]" placeholder="Current Password">
+                    <input class='text' type='text' name="passwords[new]" placeholder="New Password">
+                    <input class='submitButton' type="submit" name='submit' value='Change Password'>
+                  </form>
+                  <br>
+                  <section id='password-change-message'>TEST </section>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIGN OUT BUTTON -->
+
+          <button id='sign-out-button' type="button" class="btn btn-primary"> Sign Out </button>
+
+        </div>
+
+
+
 
 
 
