@@ -11,22 +11,14 @@ const signUpSuccess = function (data) {
 //   document.getElementById('new-user-form').reset()
 // }
 //
-// const signInSuccess = function (data) {
-//   $('#successMessage').text('Signed in sucessfully')
-//   $('.password-change').css('display', 'block')
-//   $('.signOut').css('display', 'block')
-//   $('.newGame').css('display', 'block')
-//   store.user = data.user
-//   $('#sign-in-form').hide()
-//   $('#sign-in-message').hide()
-//   $('#new-user-form').hide()
-//   $('#sign-up-message').hide()
-//   $('#sign-out-input').show()
-//   $('.userMessage').text('X goes first so click a square to begin')
-//   $('#message').text('')
-//   document.getElementById('sign-in-form').reset()
-//   document.getElementById('create-game-button').click() // triggers new game button to ensure that createGame runs on sign in
-// }
+const signInSuccess = function (data) {
+  console.log('ui success')
+  store.user = data.user
+  console.log(data)
+  console.log(data.user)
+  // document.getElementById('sign-in-form').reset()
+  // document.getElementById('create-game-button').click() // triggers new game button to ensure that createGame runs on sign in
+}
 //
 // const signInFailure = function () {
 //   $('#successMessage').text('Invalid Password / Username')
@@ -56,12 +48,11 @@ const signUpSuccess = function (data) {
 //   $('#successMessage').text('')
 // }
 //
-// const changePasswordSuccess = function (data) {
-//   $('#password-change-message').show()
-//   $('#password-change-message').text('Changed password sucessfully')
-//   $('#successMessage').text('')
-//   document.getElementById('change-password-form').reset()
-// }
+const changePasswordSuccess = function (data) {
+  console.log('ui success')
+  console.log(data)
+  document.getElementById('change-password-form').reset()
+}
 //
 // const changePasswordFailure = function () {
 //   $('#password-change-message').show()
@@ -94,12 +85,12 @@ const signUpSuccess = function (data) {
 // }
 
 module.exports = {
-  signUpSuccess
+  signUpSuccess,
   // signUpFailure,
-  // signInSuccess,
+  signInSuccess,
   // signInFailure,
   // signOutSuccess,
-  // changePasswordSuccess,
+  changePasswordSuccess
   // changePasswordFailure,
   // createGameSuccess,
   // createGameFailure,

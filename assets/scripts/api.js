@@ -11,6 +11,7 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
+  console.log('api runs')
   return $.ajax({
     url: config.apiOrigin + 'sign-in',
     method: 'POST',
@@ -29,6 +30,7 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
+  console.log('api sucess')
   return $.ajax({
     url: config.apiOrigin + 'change-password/' + store.user.id,
     method: 'PATCH',
