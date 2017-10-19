@@ -24,6 +24,12 @@ $(() => {
   $('#lit-input-form').on('submit', events.onAddToList)
 })
 
+// myLit
+
+$(() => {
+  $('#my-lit-button').on('click', events.returnMyLit)
+})
+
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
