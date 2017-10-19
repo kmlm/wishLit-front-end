@@ -42,9 +42,22 @@ const changePassword = function (data) {
   })
 }
 
+const addToList = function (data) {
+  console.log('api sucess')
+  return $.ajax({
+    url: config.apiOrigin + 'books/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  addToList
 }
