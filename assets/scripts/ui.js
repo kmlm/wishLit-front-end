@@ -22,6 +22,10 @@ const signInSuccess = function (data) {
   document.getElementById('sign-up-close-button').click()
   document.getElementById('sign-in-close-button').click()
   $('#sign-in-message').text('')
+  $('#landing-change-password').show()
+  $('#sign-out-button').show()
+  $('#landing-sign-in').hide()
+  $('#landing-sign-up').hide()
 }
 
 const signInFailure = function () {
@@ -34,6 +38,10 @@ const signOutSuccess = function () {
   console.log(store.user)
   store.user = null
   console.log(store.user)
+  $('#landing-sign-in').show()
+  $('#landing-sign-up').show()
+  $('#landing-change-password').hide()
+  $('#sign-out-button').hide()
 }
 
 const changePasswordSuccess = function (data) {
