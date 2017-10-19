@@ -29,6 +29,7 @@ const signInSuccess = function (data) {
   $('#landing-sign-in').hide()
   $('#landing-sign-up').hide()
   $('#hidden-until-sign-in').show()
+  $('#logged-in-as').text('You are logged in as "' + data.user.email + '"!')
 }
 
 const signInFailure = function () {
@@ -46,6 +47,7 @@ const signOutSuccess = function () {
   $('#landing-change-password').hide()
   $('#sign-out-button').hide()
   $('#hidden-until-sign-in').hide()
+  $('#logged-in-as').text('')
 }
 
 const changePasswordSuccess = function (data) {
