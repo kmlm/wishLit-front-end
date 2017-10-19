@@ -4,8 +4,8 @@ const signUpSuccess = function (data) {
   store.user = data.user
   console.log(data)
   console.log(data.user)
-  document.getElementById('sign-up-close-button').click()
-  $('#sign-up-message').text('')
+  document.getElementById('new-user-form').reset()
+  $('#sign-up-message').text('Thanks, now please sign in below!')
 }
 
 const signUpFailure = function () {
@@ -19,9 +19,11 @@ const signInSuccess = function (data) {
   console.log(data)
   console.log(data.user)
   document.getElementById('sign-in-form').reset()
+  document.getElementById('sign-in-form2').reset()
   document.getElementById('sign-up-close-button').click()
   document.getElementById('sign-in-close-button').click()
   $('#sign-in-message').text('')
+  $('#sign-up-message').text('')
   $('#landing-change-password').show()
   $('#sign-out-button').show()
   $('#landing-sign-in').hide()
