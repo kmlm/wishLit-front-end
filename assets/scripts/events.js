@@ -1,6 +1,7 @@
 const getFormFields = require('/Users/n0252667/wdi/projects/kevin-tic-tac-toe/lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -71,10 +72,20 @@ const removeBook = function (event) {
 
 
 const openEditModal = function (){
-  $('.edit-lit-button').click()
+  // $('.edit-lit-button').click()
+  console.log('open edit ran')
+  $('#edit-lit-button').on('click', function() {
+    console.log($(this))
+    console.log($(this).closest('div').attr('data-id'))
+    store.id = $(this).closest('div').attr('data-id')
+    console.log(store.id)
+  })
 }
+
 // const editBook = function (event) {
+//   event.preventDefault()
 //   console.log('event Ran')
+//   const data = getFormFields(this)
 //   $('.remove').on('click', function () {
 //   $(this).parent().hide()
 //   console.log($(this).parent().attr('data-id'))
