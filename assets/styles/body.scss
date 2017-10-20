@@ -42,6 +42,7 @@ p {
 }
 
 .cards {
+  clear: both;
   text-align: center;
   // margin: 0 auto;
   // position: relative;
@@ -62,6 +63,30 @@ p {
   height: 200px;
   width: auto;
   text-align: center;
+}
+
+.spaceUnderLanding {
+  height: 250px;
+  margin: auto;
+  // display: block;
+  // align-items: center;
+  // opacity: .1;
+}
+
+
+.imageDiv {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+@media (min-width: 200px) {
+  .imageDiv {
+    display: block;
+  }
+
 }
 
 .spaceBetween {

@@ -31,6 +31,8 @@ const signInSuccess = function (data) {
   $('#landing-sign-up').hide()
   $('#hidden-until-sign-in').show()
   $('#logged-in-as').text('You are logged in as "' + data.user.email + '"!')
+  $('.imageDiv').hide()
+  $('.spaceUnderLanding').css('height', '50px')
 }
 
 const signInFailure = function () {
