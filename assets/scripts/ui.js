@@ -48,6 +48,7 @@ const signOutSuccess = function () {
   $('#landing-change-password').hide()
   $('#sign-out-button').hide()
   $('#hidden-until-sign-in').hide()
+  $('.content').hide()
   $('#logged-in-as').text('')
 }
 
