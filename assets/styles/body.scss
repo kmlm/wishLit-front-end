@@ -53,15 +53,15 @@ p {
   flex-direction: column;
 }
 
-.mylist {
-  // text-align: right;
+.content {
   border-style: double;
   border-color: black;
   margin-top: 50px;
-  // display: none;
+  display: none;
   overflow-y: scroll;
   height: 200px;
-  width: auto
+  width: auto;
+  text-align: center;
 }
 
 .spaceBetween {

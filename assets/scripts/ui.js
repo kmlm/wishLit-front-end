@@ -1,4 +1,5 @@
 const store = require('./store')
+const showBooksTemplate = require('./templates/book-index.handlebars')
 
 const signUpSuccess = function (data) {
   store.user = data.user
@@ -76,7 +77,10 @@ const addToListFailure = function () {
 const returnLitSuccess = function (data) {
   console.log('ui success')
   console.log(data)
-  // $('.mylist').text(data.books[0].isbn)
+  $('.content').show()
+  const renderBooks = showBooksTemplate({ books: data.books })
+  $('.content').html(renderBooks)
+  console.log(data.books)
 }
 
 module.exports = {

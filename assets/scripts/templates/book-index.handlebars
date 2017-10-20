@@ -1,0 +1,19 @@
+{{#each books as |book|}}
+<!--
+books was defined as key in function as parameter in showBooksTemplate
+handlebars only takes one parameter -->
+
+  <div
+  data-id="{{book.id}}">
+    <p> Title: {{book.title}} </p>
+      <p> Author: {{book.author}} </p>
+      <p> ISBN: {{book.isbn}} </p>
+      <p> Price: {{book.price}} </p>
+  <br>
+  <button class='remove'> REMOVE </button>
+  <button class='edit'> EDIT </button>
+   <br>
+   <br>
+  </div>
+
+{{/each}}
