@@ -78,6 +78,20 @@ const destroyBook = function (data) {
   })
 }
 
+const updateBook = function (data, update) {
+  console.log('api success')
+  console.log(data)
+  console.log(update)
+  return $.ajax({
+    url: config.apiOrigin + 'books/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    update
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -85,5 +99,6 @@ module.exports = {
   changePassword,
   addToList,
   returnLit,
-  destroyBook
+  destroyBook,
+  updateBook
 }
