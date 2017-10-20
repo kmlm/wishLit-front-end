@@ -54,7 +54,7 @@ const returnMyLit = function (event) {
     .then(ui.returnLitSuccess)
     .then(removeBook)
     .then(openEditModal)
-    // .then(editBook)
+    .then(editBook)
     .catch(ui.returnLitFailure)
 }
 
@@ -72,7 +72,6 @@ const removeBook = function (event) {
 
 
 const openEditModal = function (){
-  // $('.edit-lit-button').click()
   console.log('open edit ran')
   $('#edit-lit-button').on('click', function() {
     console.log($(this))
@@ -82,18 +81,14 @@ const openEditModal = function (){
   })
 }
 
-// const editBook = function (event) {
-//   event.preventDefault()
-//   console.log('event Ran')
-//   const data = getFormFields(this)
-//   $('.remove').on('click', function () {
-//   $(this).parent().hide()
-//   console.log($(this).parent().attr('data-id'))
-//   api.destroyBook($(this).parent().attr('data-id'))
-//     .then(ui.destroyBookSuccess)
-//     .catch(ui.destroyFailure)
-// })
-// }editBook
+const editBook = function (event) {
+  event.preventDefault()
+  console.log('edit book Ran')
+  const data = getFormFields(this)
+  api.updateBook(data)
+    .then(ui.updateBookSuccess)
+    .catch(ui.updateBookFailure)
+}
 
 module.exports = {
   onSignUp,
@@ -103,5 +98,6 @@ module.exports = {
   onChangePassword,
   returnMyLit,
   removeBook,
-  openEditModal
+  openEditModal,
+  editBook
 }

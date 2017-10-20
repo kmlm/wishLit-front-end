@@ -78,17 +78,17 @@ const destroyBook = function (data) {
   })
 }
 
-const updateBook = function (data, update) {
+const updateBook = function (data) {
   console.log('api success')
   console.log(data)
-  console.log(update)
+  console.log(store.id)
   return $.ajax({
-    url: config.apiOrigin + 'books/' + data,
-    method: 'DELETE',
+    url: config.apiOrigin + 'books/' + store.id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    update
+    data
   })
 }
 

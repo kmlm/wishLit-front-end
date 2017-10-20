@@ -94,6 +94,19 @@ const destroyBookFailure = function (error){
   console.log(error)
 }
 
+
+const updateBookSuccess = function (data) {
+  console.log(data)
+  console.log('ui ran')
+  document.getElementById('update-lit-closure-button').click()
+  document.getElementById('lit-update-form').reset()
+  document.getElementById('my-lit-button').click()
+}
+
+const updateBookFailure = function (error) {
+  console.log(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -106,5 +119,7 @@ module.exports = {
   addToListFailure,
   returnLitSuccess,
   destroyBookSuccess,
-  destroyBookFailure
+  destroyBookFailure,
+  updateBookSuccess,
+  updateBookFailure
 }
