@@ -65,7 +65,7 @@
                   </form>
                   <br>
                   <br>
-                  <section id='sign-up-message'></section>
+
 
                 </div>
                 <div class="modal-footer">
@@ -238,6 +238,50 @@
             <div class='content'>
             </div>
 
+
+    <!-- EDIT BOOK MODAL -->
+
+
+
+    <div class="modal fade" id="editLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Please Fill Out Only the Fields You Would Like to Edit</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- LIT INPUT FIELDS within Modal -->
+
+            <form id='lit-update-form'>
+              <input class='myListFields' type='lit field' name="book[title]" placeholder="Title">
+              <br>
+              <br>
+              <input class='myListFields' type='lit field' name="book[author]" placeholder="Author">
+              <br>
+              <br>
+              <input class='myListFields' type='lit field' name="book[isbn]" placeholder="isbn">
+              <br>
+              <br>
+              <input class='myListFields' type='lit field' name="book[price]" placeholder="Price">
+              <br>
+              <br>
+              <input id='add-lit-button' class='submitButton' type="submit" name='submit' value='Edit Lit'>
+            </form>
+            <br>
+            <section id='addLitMessage'></section>
+
+
+          </div>
+          <div class="modal-footer">
+            <button id='update-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     </body>
 </html>
