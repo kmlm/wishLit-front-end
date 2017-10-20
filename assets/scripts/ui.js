@@ -76,7 +76,7 @@ const addToListFailure = function () {
 const returnLitSuccess = function (data) {
   console.log('ui success')
   console.log(data)
-  $('.mylist').text(data.books[0].isbn)
+  // $('.mylist').text(data.books[0].isbn)
 }
 
 module.exports = {
