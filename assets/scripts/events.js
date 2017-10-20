@@ -52,12 +52,14 @@ const returnMyLit = function (event) {
   api.returnLit()
     .then(ui.returnLitSuccess)
     .then(removeBook)
+    .then(openEditModal)
+    // .then(editBook)
     .catch(ui.returnLitFailure)
 }
 
 const removeBook = function (event) {
+  // event.preventDefault()
   console.log('remove Ran')
-
   $('.remove').on('click', function () {
   $(this).parent().hide()
   console.log($(this).parent().attr('data-id'))
@@ -67,6 +69,21 @@ const removeBook = function (event) {
 })
 }
 
+
+const openEditModal = function (){
+  $('.edit-lit-button').click()
+}
+// const editBook = function (event) {
+//   console.log('event Ran')
+//   $('.remove').on('click', function () {
+//   $(this).parent().hide()
+//   console.log($(this).parent().attr('data-id'))
+//   api.destroyBook($(this).parent().attr('data-id'))
+//     .then(ui.destroyBookSuccess)
+//     .catch(ui.destroyFailure)
+// })
+// }editBook
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -74,5 +91,6 @@ module.exports = {
   onAddToList,
   onChangePassword,
   returnMyLit,
-  removeBook
+  removeBook,
+  openEditModal
 }
