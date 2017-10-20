@@ -68,6 +68,7 @@ const addToListSuccess = function () {
   document.getElementById('lit-input-form').reset()
   $('#addLitMessage').text("")
   document.getElementById('add-lit-closure-button').click()
+  document.getElementById('my-lit-button').click()
 }
 
 const addToListFailure = function () {
