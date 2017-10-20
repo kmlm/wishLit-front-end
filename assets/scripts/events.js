@@ -58,11 +58,14 @@ const returnMyLit = function (event) {
 const removeBook = function (event) {
   console.log('remove Ran')
   $('.remove').on('click', function () {
-    api.destroyBook()
-      .then(ui.destroyBookSuccess)
-      .then(removeBook)
-      .catch(ui.destroyFailure)
-  })
+  $(this).parent().hide()
+})
+  // $('.remove').on('click', function () {
+  //   api.destroyBook()
+  //     .then(ui.destroyBookSuccess)
+  //     .then(removeBook)
+  //     .catch(ui.destroyFailure)
+  // })
 }
 
 module.exports = {

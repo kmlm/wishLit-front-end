@@ -66,6 +66,17 @@ const returnLit = function () {
   })
 }
 
+// const destroyBook = function () {
+//   console.log('api success')
+//   return $.ajax({
+//     url: config.apiOrigin + 'books/${}',
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
+
 module.exports = {
   signUp,
   signIn,
@@ -73,4 +84,5 @@ module.exports = {
   changePassword,
   addToList,
   returnLit
+  // destroyBook
 }

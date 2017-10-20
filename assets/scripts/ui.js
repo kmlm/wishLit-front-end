@@ -85,6 +85,15 @@ const returnLitSuccess = function (data) {
   console.log(data.books)
 }
 
+// const destroyBookSuccess = function (data){
+//   console.log(data)
+//   console.log('ui ran')
+// }
+//
+// const destroyBookSuccess = function (error){
+//   console.log(error)
+// }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -96,4 +105,5 @@ module.exports = {
   addToListSuccess,
   addToListFailure,
   returnLitSuccess
+  // destroyBookSuccess
 }
