@@ -52,6 +52,8 @@ const signOutSuccess = function () {
   $('#hidden-until-sign-in').hide()
   $('.content').hide()
   $('#logged-in-as').text('')
+  $('.spaceUnderLanding').css('height', '250px')
+  $('.imageDiv').show()
 }
 
 const changePasswordSuccess = function (data) {
