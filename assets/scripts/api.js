@@ -66,16 +66,17 @@ const returnLit = function () {
   })
 }
 
-// const destroyBook = function () {
-//   console.log('api success')
-//   return $.ajax({
-//     url: config.apiOrigin + 'books/${}',
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const destroyBook = function (data) {
+  console.log('api success')
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + 'books/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -83,6 +84,6 @@ module.exports = {
   signOut,
   changePassword,
   addToList,
-  returnLit
-  // destroyBook
+  returnLit,
+  destroyBook
 }
