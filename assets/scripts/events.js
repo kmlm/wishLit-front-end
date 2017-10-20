@@ -51,7 +51,18 @@ const returnMyLit = function (event) {
   console.log('event success')
   api.returnLit()
     .then(ui.returnLitSuccess)
+    .then(removeBook)
     .catch(ui.returnLitFailure)
+}
+
+const removeBook = function (event) {
+  console.log('remove Ran')
+  $('.remove').on('click', function () {
+    api.destroyBook()
+      .then(ui.destroyBookSuccess)
+      .then(removeBook)
+      .catch(ui.destroyFailure)
+  })
 }
 
 module.exports = {
@@ -60,5 +71,6 @@ module.exports = {
   onSignOut,
   onAddToList,
   onChangePassword,
-  returnMyLit
+  returnMyLit,
+  removeBook
 }
