@@ -54,6 +54,10 @@ const signOutSuccess = function () {
   $('#logged-in-as').text('')
   $('.spaceUnderLanding').css('height', '250px')
   $('.imageDiv').show()
+  $('#my-list-title').text('Click below to see your list')
+  $('#add-card-title').text('Add a title to your list!')
+  $('#add-message').text('')
+  $('#my-lit-button').show()
 }
 
 const changePasswordSuccess = function (data) {
@@ -68,9 +72,11 @@ const changePasswordFailure = function () {
   document.getElementById('change-password-form').reset()
 }
 
-const addToListSuccess = function () {
+const addToListSuccess = function (data) {
   document.getElementById('lit-input-form').reset()
+  $('#add-message').text(data.book.title + 'has been added to your list!')
   $('#addLitMessage').text('')
+  $('#add-card-title').text('')
   document.getElementById('add-lit-closure-button').click()
   document.getElementById('my-lit-button').click()
 }
@@ -83,6 +89,8 @@ const addToListFailure = function () {
 const returnLitSuccess = function (data) {
   console.log('ui success')
   console.log(data)
+  $('#my-lit-button').hide()
+  $('#my-list-title').text('')
   $('.content').show()
   const renderBooks = showBooksTemplate({ books: data.books })
   $('.content').html(renderBooks)
