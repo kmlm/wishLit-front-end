@@ -30,6 +30,11 @@ $(() => {
   $('#my-lit-button').on('click', events.returnMyLit)
 })
 
+// editLit
+
+$(() => {
+  $('#lit-update-form').on('submit', events.editBook)
+})
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
