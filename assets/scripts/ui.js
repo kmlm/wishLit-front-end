@@ -66,13 +66,13 @@ const changePasswordFailure = function () {
 
 const addToListSuccess = function () {
   document.getElementById('lit-input-form').reset()
-  $('#addLitMessage').text("")
+  $('#addLitMessage').text('')
   document.getElementById('add-lit-closure-button').click()
   document.getElementById('my-lit-button').click()
 }
 
 const addToListFailure = function () {
-  $('#addLitMessage').text("There are some fields missing for your Lit!")
+  $('#addLitMessage').text('There are some fields missing for your Lit!')
   // document.getElementById('lit-input-form').reset()
 }
 
@@ -85,12 +85,12 @@ const returnLitSuccess = function (data) {
   console.log(data.books)
 }
 
-const destroyBookSuccess = function (data){
+const destroyBookSuccess = function (data) {
   console.log(data)
   console.log('ui ran')
 }
 
-const destroyBookFailure = function (error){
+const destroyBookFailure = function (error) {
   console.log(error)
 }
 

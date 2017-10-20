@@ -62,17 +62,17 @@ const removeBook = function (event) {
   // event.preventDefault()
   console.log('remove Ran')
   $('.remove').on('click', function () {
-  $(this).parent().hide()
-  console.log($(this).parent().attr('data-id'))
-  api.destroyBook($(this).parent().attr('data-id'))
-    .then(ui.destroyBookSuccess)
-    .catch(ui.destroyFailure)
-})
+    $(this).parent().hide()
+    console.log($(this).parent().attr('data-id'))
+    api.destroyBook($(this).parent().attr('data-id'))
+      .then(ui.destroyBookSuccess)
+      .catch(ui.destroyFailure)
+  })
 }
 
-const openEditModal = function (){
+const openEditModal = function () {
   console.log('open edit ran')
-  $('.edit-lit-button').on('click', function() {
+  $('.edit-lit-button').on('click', function () {
     console.log($(this))
     console.log($(this).closest('div').attr('data-id'))
     store.id = $(this).closest('div').attr('data-id')
