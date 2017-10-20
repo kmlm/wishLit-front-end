@@ -70,10 +70,9 @@ const removeBook = function (event) {
 })
 }
 
-
 const openEditModal = function (){
   console.log('open edit ran')
-  $('#edit-lit-button').on('click', function() {
+  $('.edit-lit-button').on('click', function() {
     console.log($(this))
     console.log($(this).closest('div').attr('data-id'))
     store.id = $(this).closest('div').attr('data-id')

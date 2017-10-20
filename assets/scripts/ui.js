@@ -94,13 +94,14 @@ const destroyBookFailure = function (error){
   console.log(error)
 }
 
-
 const updateBookSuccess = function (data) {
   console.log(data)
   console.log('ui ran')
   document.getElementById('update-lit-closure-button').click()
   document.getElementById('lit-update-form').reset()
   document.getElementById('my-lit-button').click()
+  store.id = null
+  console.log(store.id)
 }
 
 const updateBookFailure = function (error) {
