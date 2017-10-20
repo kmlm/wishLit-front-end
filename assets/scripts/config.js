@@ -2,8 +2,7 @@
 
 const config = {
   apiOrigins: {
-    // production: 'https://kevin-full-stack-project.herokuapp.com/',
-    production: 'http://localhost:4741/',
+    production: 'https://kevin-full-stack-project.herokuapp.com/',
     development: 'http://localhost:4741/'
   }
 }
