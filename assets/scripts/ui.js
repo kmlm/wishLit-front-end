@@ -73,6 +73,12 @@ const addToListFailure = function () {
   // document.getElementById('lit-input-form').reset()
 }
 
+const returnLitSuccess = function (data) {
+  console.log('ui success')
+  console.log(data)
+  $('.mylist').text(data.books[0].isbn)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -82,5 +88,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   addToListSuccess,
-  addToListFailure
+  addToListFailure,
+  returnLitSuccess
 }
