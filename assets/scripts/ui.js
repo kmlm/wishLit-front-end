@@ -37,6 +37,7 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('#sign-in-message').text('Invalid Password / Username')
+  $('#sign-up-message').text('Invalid Password / Username')
   document.getElementById('sign-in-form').reset()
 }
 
