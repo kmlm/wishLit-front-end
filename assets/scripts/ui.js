@@ -67,6 +67,8 @@ const changePasswordSuccess = function (data) {
   document.getElementById('change-password-form').reset()
   document.getElementById('change-password-close-button').click()
   $('#password-change-message').text('')
+  $('#add-message').text('Password Changed Successfully!'
+  )
 }
 
 const changePasswordFailure = function () {
@@ -76,7 +78,7 @@ const changePasswordFailure = function () {
 
 const addToListSuccess = function (data) {
   document.getElementById('lit-input-form').reset()
-  $('#add-message').text(data.book.title + 'has been added to your list!')
+  $('#add-message').text(data.book.title + ' has been added to your list!')
   $('#addLitMessage').text('')
   $('#add-card-title').text('')
   document.getElementById('add-lit-closure-button').click()
