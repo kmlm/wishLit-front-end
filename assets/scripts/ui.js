@@ -58,7 +58,7 @@ const signOutSuccess = function () {
   $('#add-card-title').text('Add a title to your list!')
   $('#add-message').text('')
   $('#my-lit-button').show()
-  $('#addLitMessage').text('')
+  $('#editLitMessage').text('')
 }
 
 const changePasswordSuccess = function (data) {
@@ -114,12 +114,13 @@ const updateBookSuccess = function (data) {
   document.getElementById('lit-update-form').reset()
   document.getElementById('my-lit-button').click()
   store.id = null
+  $('#editLitMessage').text('')
   console.log(store.id)
 }
 
 const updateBookFailure = function (error) {
   console.log(error)
-  $('#addLitMessage').text('Make sure you have included the title!')
+  $('#editLitMessage').text('Make sure you have included the title!')
 }
 
 module.exports = {
