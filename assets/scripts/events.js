@@ -61,10 +61,11 @@ const returnMyLit = function (event) {
 const removeBook = function (event) {
   // event.preventDefault()
   console.log('remove Ran')
-  $('.remove').on('click', function () {
-    $(this).parent().hide()
-    console.log($(this).parent().attr('data-id'))
-    api.destroyBook($(this).parent().attr('data-id'))
+  $('#destroy-modal-yes-button').on('click', function () {
+    $('.remove'
+    ).parent().hide()
+    console.log($('.remove').parent().attr('data-id'))
+    api.destroyBook($('.remove').parent().attr('data-id'))
       .then(ui.destroyBookSuccess)
       .catch(ui.destroyFailure)
   })
