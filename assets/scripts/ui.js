@@ -1,7 +1,7 @@
 const store = require('./store')
 const showBooksTemplate = require('./templates/book-index.handlebars')
-
 const fillFormTemplate = require('./templates/input-fields.handlebars')
+// const events = require('./events.js')
 
 const indexUsersSuccess = function (data) {
   console.log(data)

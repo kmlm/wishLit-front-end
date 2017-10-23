@@ -10,12 +10,20 @@ const onWindowLoad = function() {
     .catch(ui.indexUsersFailure)
 }
 
+const displayStatsPostSignUp = function() {
+  console.log('displayStatsPostSignUp runs')
+  api.indexUsers()
+    .then(ui.indexUsersSuccess)
+    .catch(ui.indexUsersFailure)
+}
+
 const onSignUp = function(event) {
   event.preventDefault()
   console.log('onSignUp runs')
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(displayStatsPostSignUp)
     .catch(ui.signUpFailure)
 }
 
@@ -120,5 +128,6 @@ module.exports = {
   openEditModal,
   editBook,
   removeModal,
-  onWindowLoad
+  onWindowLoad,
+  displayStatsPostSignUp
 }
