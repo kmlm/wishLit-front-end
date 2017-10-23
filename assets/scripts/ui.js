@@ -59,6 +59,7 @@ const signOutSuccess = function () {
   $('#add-message').text('')
   $('#my-lit-button').show()
   $('#editLitMessage').text('')
+  $('.cards').css('height', '220px')
 }
 
 const changePasswordSuccess = function (data) {
@@ -96,6 +97,7 @@ const returnLitSuccess = function (data) {
   const renderBooks = showBooksTemplate({ books: data.books })
   $('.content').html(renderBooks)
   console.log(data.books)
+  $('.cards').css('height', '50px')
 }
 
 const destroyBookSuccess = function (data) {
