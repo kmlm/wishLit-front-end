@@ -107,6 +107,7 @@ const destroyBookSuccess = function (data) {
   console.log(data)
   console.log('ui ran')
   document.getElementById('my-lit-button').click()
+  $('#add-message').text('Successfully Deleted!')
 }
 
 const destroyBookFailure = function (error) {
