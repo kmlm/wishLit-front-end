@@ -122,6 +122,10 @@ const updateBookSuccess = function (data) {
   document.getElementById('my-lit-button').click()
   store.id = null
   $('#editLitMessage').text('')
+  if (data.book.author === "") {
+    $('#add-message').text(data.book.title + ' has been updated!')}
+    else {
+     $('#add-message').text(data.book.title + ' by ' + data.book.author +  ' has been updated!')}
   console.log(store.id)
 }
 
