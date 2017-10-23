@@ -58,6 +58,7 @@ const signOutSuccess = function () {
   $('#add-card-title').text('Add a title to your list!')
   $('#add-message').text('')
   $('#my-lit-button').show()
+  $('#addLitMessage').text('')
 }
 
 const changePasswordSuccess = function (data) {
@@ -118,6 +119,7 @@ const updateBookSuccess = function (data) {
 
 const updateBookFailure = function (error) {
   console.log(error)
+  $('#addLitMessage').text('Make sure you have included the title!')
 }
 
 module.exports = {
