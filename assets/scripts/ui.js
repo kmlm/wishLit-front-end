@@ -82,7 +82,7 @@ const addToListSuccess = function (data) {
 }
 
 const addToListFailure = function () {
-  $('#addLitMessage').text('There are some fields missing for your Lit!')
+  $('#addLitMessage').text('Make sure you have provided a title!')
   // document.getElementById('lit-input-form').reset()
 }
 
