@@ -3,7 +3,7 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
-const onSignUp = function (event) {
+const onSignUp = function(event) {
   event.preventDefault()
   console.log('onSignUp runs')
   const data = getFormFields(this)
@@ -12,7 +12,7 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 
-const onSignIn = function (event) {
+const onSignIn = function(event) {
   event.preventDefault()
   console.log('event success')
   const data = getFormFields(this)
@@ -21,7 +21,7 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-const onSignOut = function (event) {
+const onSignOut = function(event) {
   event.preventDefault()
   console.log('event success')
   api.signOut()
@@ -29,7 +29,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const onChangePassword = function (event) {
+const onChangePassword = function(event) {
   event.preventDefault()
   console.log('event success')
   const data = getFormFields(this)
@@ -38,7 +38,7 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-const onAddToList = function (event) {
+const onAddToList = function(event) {
   event.preventDefault()
   console.log('event success')
   const data = getFormFields(this)
@@ -47,33 +47,40 @@ const onAddToList = function (event) {
     .catch(ui.addToListFailure)
 }
 
-const returnMyLit = function (event) {
+const returnMyLit = function(event) {
   event.preventDefault()
   console.log('event success')
   api.returnLit()
     .then(ui.returnLitSuccess)
+    .then(removeModal)
     .then(removeBook)
     .then(openEditModal)
     .then(editBook)
     .catch(ui.returnLitFailure)
 }
 
-const removeBook = function (event) {
+const removeModal = function() {
+  $('.remove').on('click', function() {
+    console.log(this)
+    const id = $(this).parent().attr('data-id')
+    console.log(id)
+    removeBook(id)
+  })
+}
+
+const removeBook = function(data) {
   // event.preventDefault()
   console.log('remove Ran')
-  $('#destroy-modal-yes-button').on('click', function () {
-    $('.remove'
-    ).parent().hide()
-    console.log($('.remove').parent().attr('data-id'))
-    api.destroyBook($('.remove').parent().attr('data-id'))
+  $('#destroy-modal-yes-button').on('click', function() {
+    api.destroyBook(data)
       .then(ui.destroyBookSuccess)
       .catch(ui.destroyFailure)
   })
 }
 
-const openEditModal = function () {
+const openEditModal = function() {
   console.log('open edit ran')
-  $('.edit-lit-button').on('click', function () {
+  $('.edit-lit-button').on('click', function() {
     console.log($(this))
     console.log($(this).closest('div').attr('data-id'))
     store.id = $(this).closest('div').attr('data-id')
@@ -81,7 +88,7 @@ const openEditModal = function () {
   })
 }
 
-const editBook = function (event) {
+const editBook = function(event) {
   event.preventDefault()
   console.log('edit book Ran')
   const data = getFormFields(this)
@@ -99,5 +106,6 @@ module.exports = {
   returnMyLit,
   removeBook,
   openEditModal,
-  editBook
+  editBook,
+  removeModal
 }
