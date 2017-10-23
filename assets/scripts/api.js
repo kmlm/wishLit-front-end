@@ -1,6 +1,15 @@
 const config = require('./config')
 const store = require('./store')
 
+
+const indexUsers = function (){
+  console.log('indexUsers runs')
+  return $.ajax({
+    url: config.apiOrigin + 'index',
+    method: 'GET'
+  })
+}
+
 const signUp = function (data) {
   console.log('api runs')
   return $.ajax({
@@ -112,5 +121,6 @@ module.exports = {
   returnLit,
   destroyBook,
   updateBook,
-  fillForm
+  fillForm,
+  indexUsers
 }

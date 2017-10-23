@@ -3,6 +3,13 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
+const onWindowLoad = function() {
+  console.log('onWindowLoad runs')
+  api.indexUsers()
+    .then(ui.indexUsersSuccess)
+    .catch(ui.indexUsersFailure)
+}
+
 const onSignUp = function(event) {
   event.preventDefault()
   console.log('onSignUp runs')
@@ -112,5 +119,6 @@ module.exports = {
   removeBook,
   openEditModal,
   editBook,
-  removeModal
+  removeModal,
+  onWindowLoad
 }

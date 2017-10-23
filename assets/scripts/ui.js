@@ -3,6 +3,15 @@ const showBooksTemplate = require('./templates/book-index.handlebars')
 
 const fillFormTemplate = require('./templates/input-fields.handlebars')
 
+const indexUsersSuccess = function (data) {
+  console.log(data)
+  $('#stats-message').text(data.users.length + ' wish lists and counting!')
+}
+
+const indexUsersFailure = function (error) {
+  console.log(error)
+}
+
 const signUpSuccess = function (data) {
   store.user = data.user
   console.log(data)
@@ -163,5 +172,7 @@ module.exports = {
   updateBookSuccess,
   updateBookFailure,
   openEditModalSuccess,
-  openEditModalFailure
+  openEditModalFailure,
+  indexUsersSuccess,
+  indexUsersFailure
 }

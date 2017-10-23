@@ -8,6 +8,10 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
+// window load
+
+$(document).ready(events.onWindowLoad)
+
 // API
 
 $(() => {
