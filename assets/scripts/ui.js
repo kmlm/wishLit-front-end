@@ -1,6 +1,8 @@
 const store = require('./store')
 const showBooksTemplate = require('./templates/book-index.handlebars')
 
+const fillFormTemplate = require('./templates/input-fields.handlebars')
+
 const signUpSuccess = function (data) {
   store.user = data.user
   console.log(data)
@@ -129,6 +131,17 @@ const updateBookFailure = function (error) {
   $('#editLitMessage').text('Make sure you have included the title!')
 }
 
+const openEditModalSuccess = function (data) {
+  console.log(data)
+  console.log('openEditModalSuccess ran')
+  const fillForm = fillFormTemplate({ books: data.books })
+  $('.modalForm').html(fillForm)
+}
+
+const openEditModalFailure = function (error) {
+  console.log(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -143,5 +156,7 @@ module.exports = {
   destroyBookSuccess,
   destroyBookFailure,
   updateBookSuccess,
-  updateBookFailure
+  updateBookFailure,
+  openEditModalSuccess,
+  openEditModalFailure
 }
