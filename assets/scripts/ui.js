@@ -134,7 +134,7 @@ const updateBookFailure = function (error) {
 const openEditModalSuccess = function (data) {
   console.log(data)
   console.log('openEditModalSuccess ran')
-  const fillForm = fillFormTemplate({ books: data.books })
+  const fillForm = fillFormTemplate({ books: data })
   $('.modalForm').html(fillForm)
 }
 

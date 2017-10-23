@@ -94,7 +94,7 @@ const updateBook = function (data) {
 
 const fillForm = function (data) {
   console.log(data)
-  $.ajax({
+  return $.ajax({
     url: config.apiOrigin + 'books/' + data,
     method: 'GET',
     headers: {
