@@ -76,13 +76,16 @@ const openEditModal = function () {
     console.log($(this))
     console.log($(this).closest('div').attr('data-id'))
     store.id = $(this).closest('div').attr('data-id')
-    console.log(store.id)
+    api.fillForm($(this).closest('div').attr('data-id'))
+      .then(ui.openEditModalSuccess)
+      .catch(ui.openEditModalFailure)
   })
 }
 
 const editBook = function (event) {
   event.preventDefault()
   console.log('edit book Ran')
+  console.log(this)
   const data = getFormFields(this)
   api.updateBook(data)
     .then(ui.updateBookSuccess)
