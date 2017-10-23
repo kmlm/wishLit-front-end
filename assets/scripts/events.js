@@ -73,10 +73,11 @@ const removeBook = function (event) {
 const openEditModal = function () {
   console.log('open edit ran')
   $('.edit-lit-button').on('click', function () {
-    console.log($(this))
-    console.log($(this).closest('div').attr('data-id'))
-    store.id = $(this).closest('div').attr('data-id')
-    api.fillForm($(this).closest('div').attr('data-id'))
+    console.log($(this).parent().attr('data-id'))
+    store.id = $(this).parent().attr('data-id')
+    const id = $(this).parent().attr('data-id')
+    console.log(id)
+    api.fillForm(id)
       .then(ui.openEditModalSuccess)
       .catch(ui.openEditModalFailure)
   })
