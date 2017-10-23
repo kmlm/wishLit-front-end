@@ -80,17 +80,22 @@ const removeBook = function(data) {
 
 const openEditModal = function() {
   console.log('open edit ran')
-  $('.edit-lit-button').on('click', function() {
-    console.log($(this))
-    console.log($(this).closest('div').attr('data-id'))
-    store.id = $(this).closest('div').attr('data-id')
-    console.log(store.id)
+  $('.edit-lit-button').on('click', function () {
+    console.log($(this).parent().attr('data-id'))
+    store.id = $(this).parent().attr('data-id')
+    const id = $(this).parent().attr('data-id')
+    console.log(id)
+    api.fillForm(id)
+      .then(ui.openEditModalSuccess)
+      .then(editBook)
+      .catch(ui.openEditModalFailure)
   })
 }
 
 const editBook = function(event) {
   event.preventDefault()
   console.log('edit book Ran')
+  console.log(this)
   const data = getFormFields(this)
   api.updateBook(data)
     .then(ui.updateBookSuccess)

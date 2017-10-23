@@ -92,6 +92,17 @@ const updateBook = function (data) {
   })
 }
 
+const fillForm = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + 'books/' + data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -100,5 +111,6 @@ module.exports = {
   addToList,
   returnLit,
   destroyBook,
-  updateBook
+  updateBook,
+  fillForm
 }

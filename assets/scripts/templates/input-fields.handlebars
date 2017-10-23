@@ -1,0 +1,37 @@
+{{#each books as |book|}}
+<!--
+books was defined as key in function as parameter in showBooksTemplate
+handlebars only takes one parameter -->
+
+  <!-- <div
+  data-id="{{book.id}}">
+  <hr>
+    <p> Title: {{book.title}} </p>
+      <p> Author: {{book.author}} </p>
+      <p> ISBN: {{book.isbn}} </p>
+      <p> Price: {{book.price}} </p>
+  <button class='remove'> REMOVE </button>
+  <button class='edit-lit-button' type="button" class="btn btn-primary" data-toggle="modal" data-target="#editLitModal">
+EDIT
+</button>
+   <hr> -->
+
+   <form id='lit-update-form'>
+     Title <input class='myListFields' type='text' name="book[title]" value={{book.title}}>
+     <br>
+     <br>
+     Author <input class='myListFields' type='text' name="book[author]" value={{book.author}}>
+     <br>
+     <br>
+     isbn <input class='myListFields' type='number' name="book[isbn]" value={{book.isbn}} >
+     <br>
+     <br>
+     Price <input class='myListFields' type='number' name="book[price]" value={{book.price}}>
+     <br>
+     <br>
+     <input id='edit-lit-button' class='submitButton' type="submit" name='submit' value='Edit Lit'>
+   </form>
+   <br>
+   <section id='editLitMessage'></section>
+
+{{/each}}

@@ -33,7 +33,7 @@ $(() => {
 // editLit
 
 $(() => {
-  $('#lit-update-form').on('submit', events.editBook)
+  $('.modalForm').on('submit', '#lit-update-form', events.editBook)
 })
 
 // use require with a reference to bundle the file and use it in this file
