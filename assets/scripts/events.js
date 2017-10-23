@@ -79,6 +79,7 @@ const openEditModal = function () {
     console.log(id)
     api.fillForm(id)
       .then(ui.openEditModalSuccess)
+      .then(editBook)
       .catch(ui.openEditModalFailure)
   })
 }
