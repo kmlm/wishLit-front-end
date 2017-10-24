@@ -90,6 +90,7 @@ const addToListSuccess = function (data) {
 
 const addToListFailure = function () {
   $('#addLitMessage').text('Make sure you have provided a title!')
+  document.getElementById('lit-input-form').reset()
   // document.getElementById('lit-input-form').reset()
 }
 

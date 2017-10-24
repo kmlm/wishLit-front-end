@@ -3,6 +3,18 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
+const resetModals = function(event) {
+  event.preventDefault()
+  console.log('resetModals runs')
+  $('#sign-up-message').text('')
+  $('#password-change-message').text('')
+  $('#addLitMessage').text('')
+  $('#editLitMessage').text('')
+  $('#sign-in-message').text('')
+}
+
+
+
 const onSignUp = function(event) {
   event.preventDefault()
   console.log('onSignUp runs')
@@ -112,5 +124,6 @@ module.exports = {
   removeBook,
   openEditModal,
   editBook,
-  removeModal
+  removeModal,
+  resetModals
 }
