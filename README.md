@@ -6,7 +6,13 @@ I am an avid reader and there are times when I hear about a book or see one adve
 
 This Readme focuses on the front-end of the project. The back-end API can be found here:
 
-- [API README] (https://github.com/kmlm/full-stack-project/blob/master/README.md)
+- [API README](https://github.com/kmlm/full-stack-project/blob/master/README.md)
+
+## Development Process
+
+I completed the project with a one to many relationship between a user and books. The Wish list relies on the books resource and pulls individual rows from that table to display for the user.
+
+
 
 
 ## Wireframes
@@ -36,5 +42,12 @@ on specific information such as author name or title.
 
 ## Technology Used
 
+I used html to set up the modals, input forms, and structure of the application. CSS was used for styling and to ensure that certain divs were hidden prior to certain actions being taken. CSS was also used via jQuery to change the position of divs after certain actions were taken. Javascript was used for the events functions and UI functions. jQuery was used in click handlers that triggered event funcitons and also in UI when they triggered certain actions on the DOM after event completions. AJAX requests were used for GET, PATCH, POST, and DELETE requests to the API.
 
 ## Future Iterations
+
+After metting the initial requirements, I tried to incorporate a third party npm package called price-finder to allow for a user to simply enter a url when they click the addLit button. The package would scrape the URL for specific items and I was hoping to use it to pull out Title, Author, and Price from the page and push that information into an AJAX POST request. I wasn't able to make that work, but in the future I would like to add that functionality to make it easier for users to add items to their list.
+
+I would also like to incorporate more resources in the future. I was thinking that I could create a global resource that users could all have access to and pull books from that global resource into their individual wish lists. Another option would be a gift list where a user could add books that they were thinking about getting for others.
+
+I was also thinking of incoporating an individual library where a user could click a purchased button to add the specific item to the library and it would be removed from the wish list.
