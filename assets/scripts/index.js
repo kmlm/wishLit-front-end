@@ -36,6 +36,7 @@ $(() => {
   $('.modalForm').on('submit', '#lit-update-form', events.editBook)
 })
 
+<<<<<<< HEAD
 // Reseting modals on closure
 
 $(() => {
@@ -44,6 +45,12 @@ $(() => {
 
 $(() => {
   $('span').on('click', events.resetModals)
+=======
+// addLit by URL
+
+$(() => {
+  $('#url-input-form').on('submit', events.urlToJSON)
+>>>>>>> pricefinder
 })
 
 // use require with a reference to bundle the file and use it in this file

@@ -190,36 +190,105 @@
 
         <!-- MODAL for ADD LIT -->
 
-        <div class="modal fade" id="addLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div id='hidden-until-sign-in'>
+            <!-- Content Displayed after Sign In -->
+        <div class='cards'>
+
+              <div class="card" style="width: 20rem;">
+                <p id="add-message"> </p>
+                <div class="card-block">
+                  <h4 id='add-card-title' class="card-title"> Add a title to your list! </h4>
+                  <p class="card-text"></p>
+                  <button data-toggle="modal" data-target="#addLitModal" class="btn btn-primary">addLit</button>
+                  <button id='add-lit-by-url-button' type="button" class="btn btn-primary" data-toggle="modal" data-target="#addLitUrlModal">
+                    Add Lit by URL
+                  </button>
+                </div>
+
+
+              <!-- MODAL for ADD LIT -->
+
+              <div class="modal fade" id="addLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <!-- LIT INPUT FIELDS within Modal -->
+
+                      <form id='lit-input-form'>
+                        <input class='myListFields' type='text' name="book[title]" placeholder="Title">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='text' name="book[author]" placeholder="Author">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='url' name="book[link]" placeholder="Place full URL here">
+                        <br>
+                        <br>
+                        <input class='myListFields' type='number' step='.01' name="book[price]" placeholder="Price">
+                        <br>
+                        <br>
+                        <input id='add-lit-button' class='submitButton' type="submit" name='submit' value='Add Lit'>
+                      </form>
+                      <br>
+                      <section id='addLitMessage'></section>
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button id='add-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="modal-body">
 
                 <!-- LIT INPUT FIELDS within Modal -->
 
-                <form id='lit-input-form'>
-                  <input class='myListFields' type='text' name="book[title]" placeholder="Title">
-                  <br>
-                  <br>
-                  <input class='myListFields' type='text' name="book[author]" placeholder="Author">
-                  <br>
-                  <br>
-                  <input class='myListFields' type='url' name="book[link]" placeholder="Place full URL here">
-                  <br>
-                  <br>
-                  <input class='myListFields' type='number' step='.01' name="book[price]" placeholder="Price">
-                  <br>
-                  <br>
-                  <input id='add-lit-button' class='submitButton' type="submit" name='submit' value='Add Lit'>
-                </form>
-                <br>
-                <section id='addLitMessage'></section>
+<!-- Add Lit by URL Modal -->
+
+  <div class="modal fade" id="addLitUrlModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Copy your full link here</h5>
+        <br>
+        <h3> BETA - Only certain websites supported at this time </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- LIT INPUT FIELDS within Modal -->
+
+        <form id='url-input-form'>
+          <input class='myListFields' type='url' name="book[link]" placeholder="URL">
+          <br>
+          <br>
+          <input id='add-by-url-button' class='submitButton' type="submit" name='submit' value='Add Lit'>
+        </form>
+        <br>
+        <section id='addLitUrlMessage'></section>
+
+
+      </div>
+      <div class="modal-footer">
+        <button id='add-lit-by-url-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+              <!-- Space Between  -->
 
 
               </div>

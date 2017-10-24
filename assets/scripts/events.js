@@ -3,6 +3,7 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
+<<<<<<< HEAD
 const resetModals = function(event) {
   event.preventDefault()
   console.log('resetModals runs')
@@ -14,6 +15,15 @@ const resetModals = function(event) {
 }
 
 
+=======
+// Requiring for add lit by url
+const PriceFinder = require("price-finder")
+const priceFinder = new PriceFinder()
+
+// const MetaInspector = require('node-metainspector')
+
+// Functions
+>>>>>>> pricefinder
 
 const onSignUp = function(event) {
   event.preventDefault()
@@ -114,6 +124,34 @@ const editBook = function(event) {
     .catch(ui.updateBookFailure)
 }
 
+const urlToJSON = function (event) {
+  event.preventDefault()
+  console.log(this)
+  const url = getFormFields(this).book.link
+  console.log(url)
+  // const client = new MetaInspector("url")
+  // client.on("fetch", function(){
+  //     console.log("Description: " + client.description);
+  //     console.log("Links: " + client.links.join(","));
+  // })
+  // client.on("error", function(err){
+  //     console.log(err);
+  // })
+  // client.fetch()
+
+//   const Scraper = require('image-scraper')
+//   const scraper = new Scraper(url)
+//
+// scraper.scrape(function(image) {
+//     console.log('success')
+// })
+  priceFinder.findItemDetails(url, function(err, itemDetails) {
+      console.log(itemDetails.price)
+      console.log(itemDetails.name)
+      console.log(itemDetails.author)
+}
+)}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -125,5 +163,9 @@ module.exports = {
   openEditModal,
   editBook,
   removeModal,
+<<<<<<< HEAD
   resetModals
+=======
+  urlToJSON
+>>>>>>> pricefinder
 }
