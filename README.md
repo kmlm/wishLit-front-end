@@ -9,12 +9,14 @@ API uses Token authentication and we'll see how to make authenticated request
 
 ## Wireframes
 
--   [Wireframe](https://git.generalassemb.ly/ga-wdi-boston/http-study)
+-   [Sign In](https://i.imgur.com/13dBzWb.png)
+-  [Sign Up](https://i.imgur.com/TR0GzUS.png)
+-  [Landing](https://i.imgur.com/U8sQIH7.png)
 
 
 ## ERD
 
--   [ERD](https://git.generalassemb.ly/ga-wdi-boston/http-study)
+-   [ERD](https://www.draw.io/#Hkmlm%2Ffull-stack-project%2Fmaster%2FUntitled%20Diagram.xml)
 
 ## Technology Used
 
