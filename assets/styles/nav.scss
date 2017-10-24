@@ -7,12 +7,27 @@
   font-size: 5em;
 }
 
-#logged-in-as {
-  font-weight: bold;
-}
 
 .stats {
   float: right;
   font-size: 1.5em;
   font-weight: bold;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center
+}
+
+
+
+#logged-in-as {
+  clear: both;
+  font-weight: bold;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center
+
 }

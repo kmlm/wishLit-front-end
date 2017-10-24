@@ -10,6 +10,10 @@
     background-color: #F5FFFE;
 }
 
+hr {
+  clear:both;
+}
+
 h1 {
   text-align: center;
 }
@@ -45,7 +49,7 @@ p {
 .cards {
   clear: both;
   text-align: center;
-  // margin: 0 auto;
+  margin-top: 50px;
   // position: relative;
   // align-items: center;
   // justify-content: center;
@@ -67,7 +71,7 @@ p {
 }
 
 .spaceUnderLanding {
-  height: 250px;
+  height: 300px;
   margin: auto;
   // display: block;
   // align-items: center;
