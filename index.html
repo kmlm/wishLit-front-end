@@ -1,278 +1,280 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>wishLit</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>wishLit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Nav Bar -->
-      <nav class="navbar navbar-light bg-faded">
-        <section class='nav'> WishLIT </section>
-        <p class="navbar-text"> A Wish list for literature</p>
-        <br>
-        <p id='logged-in-as' class="navbar-text"></p>
-      </nav>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-light bg-faded">
+    <section class='nav'> WishLIT </section>
+    <p class="navbar-text"> A Wish list for literature</p>
+    <br>
+    <p id='logged-in-as' class="navbar-text"></p>
+  </nav>
 
 
-      <!-- MODAL BUTTONS -->
+  <!-- MODAL BUTTONS -->
 
-        <div class="landing-buttons">
+  <div class="landing-buttons">
 
-          <!-- Button Sign Up-->
+    <!-- Button Sign Up-->
 
-          <button id='landing-sign-up' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+    <button id='landing-sign-up' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
         Sign Up
       </button>
 
 
-          <!-- Modal Sign Up -->
-          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-                </div>
-                <div class="modal-body">
-                  <!-- Sign Up modal content -->
-
-                  <!-- Sign up top -->
-                  <section id='sign-up-message'> </section>
-                  <form id='new-user-form'>
-                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
-                    <input class='text' type='text' name="credentials[password]" placeholder="Password">
-                    <input class='text' type='text' name="credentials[password_confirmation]" placeholder="Confirm Password">
-                    <input class='submitButton' type="submit" name='submit' value='Sign Up'>
-                  </form>
-                  <br>
-
-                  <!-- Sign in Below -->
-
-                  <form id='sign-in-form'>
-                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
-                    <input class='text' type='password' name="credentials[password]" placeholder="Password">
-                    <input class='submitButton' type="submit" name='submit' value='Sign In'>
-                  </form>
-                  <br>
-                  <br>
-
-
-                </div>
-                <div class="modal-footer">
-                  <button id='sign-up-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Button Sign In -->
-
-          <button id='landing-sign-in' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
-        Sign In
-      </button>
-
-          <!-- Modal Sign In -->
-
-          <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Sign In Here</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-                </div>
-                <div class="modal-body">
-
-                  <!-- Sign In Section within Modal -->
-
-                  <form id='sign-in-form2'>
-                    <input class='text' type='text' name="credentials[email]" placeholder="Email">
-                    <input class='text' type='password' name="credentials[password]" placeholder="Password">
-                    <input class='submitButton' type="submit" name='submit' value='Sign In'>
-                  </form>
-                  <br>
-                  <section id='sign-in-message'></section>
-
-
-                </div>
-                <div class="modal-footer">
-                  <button id='sign-in-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Button Change Password-->
-
-          <button id='landing-change-password' type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
-      Change Password
-      </button>
-
-          <!-- Modal Change Password -->
-          <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-                </div>
-                <div class="modal-body">
-                  <!-- Change Password modal content -->
-
-                  <form id='change-password-form'>
-                    <input class='text' type='text' name="passwords[old]" placeholder="Current Password">
-                    <input class='text' type='text' name="passwords[new]" placeholder="New Password">
-                    <input class='submitButton' type="submit" name='submit' value='Change Password'>
-                  </form>
-                  <br>
-                  <section id='password-change-message'></section>
-
-                </div>
-                <div class="modal-footer">
-                  <button id='change-password-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SIGN OUT BUTTON -->
-
-          <button id='sign-out-button' type="button" class="btn btn-primary"> Sign Out </button>
-
-        </div>
-
-        <div class='spaceUnderLanding'>
-            <hr>
-
-            <div class=imageDiv>
-            <img src="https://i.imgur.com/xcUqXBe.png" alt "catch 22">
-            <img src="https://i.imgur.com/8d3EQgP.jpg" alt "karamazov">
-            <img src="https://i.imgur.com/xYgEbFn.jpg" alt "catcher in the rye">
-            <img src="https://i.imgur.com/X8MjsVz.jpg" alt "hunger">
-            <!-- <img src="./images/orphan_master.jpeg" alt "orphan_master"> -->
-            <img src="https://i.imgur.com/sIuIVKN.jpg" alt "great gatsby">
-            <img src="https://i.imgur.com/CtIwSlI.jpg" alt "ulysses">
-             <img src="https://i.imgur.com/w0WUFzD.jpg" alt "slaughterhouse five">
-             <img src="https://i.imgur.com/1BHOxf7.jpg" alt "the prince">
-             <img src="https://i.imgur.com/VwFIDNm.png" alt "fahrenheit">
-            <!-- img src="https://git.generalassemb.ly/kmlm/testing-template/blob/html/images/catch_22.png" alt='catch-22' -->
-            <!-- <img src="https://imgur.com/tJi3OFM" alt='middlemarch'> -->
-          </div>
-          </div>
-
-<div id='hidden-until-sign-in'>
-            <!-- Content Displayed after Sign In -->
-        <div class='cards'>
-
-              <div class="card" style="width: 20rem;">
-                <p id="add-message"> </p>
-                <div class="card-block">
-                  <h4 id='add-card-title' class="card-title"> Add a title to your list! </h4>
-                  <p class="card-text"></p>
-                  <button data-toggle="modal" data-target="#addLitModal" class="btn btn-primary">addLit</button>
-                </div>
-
-              <!-- MODAL for ADD LIT -->
-
-              <div class="modal fade" id="addLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                    </div>
-                    <div class="modal-body">
-
-                      <!-- LIT INPUT FIELDS within Modal -->
-
-                      <form id='lit-input-form'>
-                        <input class='myListFields' type='text' name="book[title]" placeholder="Title">
-                        <br>
-                        <br>
-                        <input class='myListFields' type='text' name="book[author]" placeholder="Author">
-                        <br>
-                        <br>
-                        <input class='myListFields' type='url' name="book[link]" placeholder="Place full URL here">
-                        <br>
-                        <br>
-                        <input class='myListFields' type='number' step='.01' name="book[price]" placeholder="Price">
-                        <br>
-                        <br>
-                        <input id='add-lit-button' class='submitButton' type="submit" name='submit' value='Add Lit'>
-                      </form>
-                      <br>
-                      <section id='addLitMessage'></section>
-
-
-                    </div>
-                    <div class="modal-footer">
-                      <button id='add-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <!-- <button type="button" class="btn btn-primary">Submit</button> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Space Between  -->
-
-                  </div>
-                  <div class='spaceBetween'>
-                  </div>
-
-              <!-- MY LIT -->
-                  <div class="card" style="width: 20rem;">
-                    <!-- <img class="card-img-top" src="..." alt="image here?"> -->
-                    <div class="card-block">
-                      <h4 class="card-title">  </h4>
-                      <h4 id='my-list-title' class="card-text">Click below to see your list</h4>
-                      <button id='my-lit-button' href="#" class="btn btn-primary">myLit</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-<!-- My lit field that is hidden until button click  -->
-            <div class='content'>
-            </div>
-
-
-    <!-- EDIT BOOK MODAL -->
-
-
-
-    <div class="modal fade" id="editLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+    <!-- Modal Sign Up -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <!-- Sign Up modal content -->
+
+            <!-- Sign up top -->
+            <section id='sign-up-message'> </section>
+            <form id='new-user-form'>
+              <input class='text' type='text' name="credentials[email]" placeholder="Email">
+              <input class='text' type='text' name="credentials[password]" placeholder="Password">
+              <input class='text' type='text' name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <input class='submitButton' type="submit" name='submit' value='Sign Up'>
+            </form>
+            <br>
+
+            <!-- Sign in Below -->
+
+            <form id='sign-in-form'>
+              <input class='text' type='text' name="credentials[email]" placeholder="Email">
+              <input class='text' type='password' name="credentials[password]" placeholder="Password">
+              <input class='submitButton' type="submit" name='submit' value='Sign In'>
+            </form>
+            <br>
+            <br>
+
+
+          </div>
+          <div class="modal-footer">
+            <button id='sign-up-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button Sign In -->
+
+    <button id='landing-sign-in' type="button" class="btn btn-primary" data-toggle="modal" data-target="#signInModal">
+        Sign In
+      </button>
+
+    <!-- Modal Sign In -->
+
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In Here</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
           </div>
           <div class="modal-body">
 
-            <!-- LIT INPUT FIELDS within Modal -->
+            <!-- Sign In Section within Modal -->
+
+            <form id='sign-in-form2'>
+              <input class='text' type='text' name="credentials[email]" placeholder="Email">
+              <input class='text' type='password' name="credentials[password]" placeholder="Password">
+              <input class='submitButton' type="submit" name='submit' value='Sign In'>
+            </form>
+            <br>
+            <section id='sign-in-message'></section>
+
+
+          </div>
+          <div class="modal-footer">
+            <button id='sign-in-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Button Change Password-->
+
+    <button id='landing-change-password' type="button" class="btn btn-primary" data-toggle="modal" data-target="#changePasswordModal">
+      Change Password
+      </button>
+
+    <!-- Modal Change Password -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Change Password modal content -->
+
+            <form id='change-password-form'>
+              <input class='text' type='text' name="passwords[old]" placeholder="Current Password">
+              <input class='text' type='text' name="passwords[new]" placeholder="New Password">
+              <input class='submitButton' type="submit" name='submit' value='Change Password'>
+            </form>
+            <br>
+            <section id='password-change-message'></section>
+
+          </div>
+          <div class="modal-footer">
+            <button id='change-password-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN OUT BUTTON -->
+
+    <button id='sign-out-button' type="button" class="btn btn-primary"> Sign Out </button>
+
+  </div>
+
+  <div class='spaceUnderLanding'>
+    <hr>
+
+    <div class=imageDiv>
+      <img src="https://i.imgur.com/xcUqXBe.png" alt "catch 22">
+      <img src="https://i.imgur.com/8d3EQgP.jpg" alt "karamazov">
+      <img src="https://i.imgur.com/xYgEbFn.jpg" alt "catcher in the rye">
+      <img src="https://i.imgur.com/X8MjsVz.jpg" alt "hunger">
+      <!-- <img src="./images/orphan_master.jpeg" alt "orphan_master"> -->
+      <img src="https://i.imgur.com/sIuIVKN.jpg" alt "great gatsby">
+      <img src="https://i.imgur.com/CtIwSlI.jpg" alt "ulysses">
+      <img src="https://i.imgur.com/w0WUFzD.jpg" alt "slaughterhouse five">
+      <img src="https://i.imgur.com/1BHOxf7.jpg" alt "the prince">
+      <img src="https://i.imgur.com/VwFIDNm.png" alt "fahrenheit">
+      <!-- img src="https://git.generalassemb.ly/kmlm/testing-template/blob/html/images/catch_22.png" alt='catch-22' -->
+      <!-- <img src="https://imgur.com/tJi3OFM" alt='middlemarch'> -->
+    </div>
+  </div>
+
+  <div id='hidden-until-sign-in'>
+    <!-- Content Displayed after Sign In -->
+    <div class='cards'>
+
+      <div class="card" style="width: 20rem;">
+        <p id="add-message"> </p>
+        <div class="card-block">
+          <h4 id='add-card-title' class="card-title"> Add a title to your list! </h4>
+          <p class="card-text"></p>
+          <button data-toggle="modal" data-target="#addLitModal" class="btn btn-primary">addLit</button>
+        </div>
+
+        <!-- MODAL for ADD LIT -->
+
+        <div class="modal fade" id="addLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+
+                <!-- LIT INPUT FIELDS within Modal -->
+
+                <form id='lit-input-form'>
+                  <input class='myListFields' type='text' name="book[title]" placeholder="Title">
+                  <br>
+                  <br>
+                  <input class='myListFields' type='text' name="book[author]" placeholder="Author">
+                  <br>
+                  <br>
+                  <input class='myListFields' type='url' name="book[link]" placeholder="Place full URL here">
+                  <br>
+                  <br>
+                  <input class='myListFields' type='number' step='.01' name="book[price]" placeholder="Price">
+                  <br>
+                  <br>
+                  <input id='add-lit-button' class='submitButton' type="submit" name='submit' value='Add Lit'>
+                </form>
+                <br>
+                <section id='addLitMessage'></section>
+
+
+              </div>
+              <div class="modal-footer">
+                <button id='add-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Space Between  -->
+
+      </div>
+      <div class='spaceBetween'>
+      </div>
+
+      <!-- MY LIT -->
+      <div class="card" style="width: 20rem;">
+        <!-- <img class="card-img-top" src="..." alt="image here?"> -->
+        <div class="card-block">
+          <h4 class="card-title">  </h4>
+          <h4 id='my-list-title' class="card-text">Click below to see your list</h4>
+          <button id='my-lit-button' href="#" class="btn btn-primary">myLit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- My lit field that is hidden until button click  -->
+  <div class='content'>
+  </div>
+
+
+  <!-- EDIT BOOK MODAL -->
+
+
+
+  <div class="modal fade" id="editLitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style: "display: none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Title Field is Required</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- LIT INPUT FIELDS within Modal -->
 
           <div class='modalForm'>
           </div>
-            <!-- <form id='lit-update-form'>
+          <!-- <form id='lit-update-form'>
               <input class='myListFields' type='text' name="book[title]" placeholder="Title">
               <br>
               <br>
@@ -291,38 +293,39 @@
             <section id='editLitMessage'></section> -->
 
 
-          </div>
-          <div class="modal-footer">
-            <button id='update-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button id='update-lit-closure-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
 
 
-    <div class="modal fade" id="destroyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to remove this title?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <div class="modal fade" id="destroyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="dispaly: none">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to remove this title?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          </div>
-          <div class="modal-body">
+        </div>
+        <div class="modal-body">
 
-              <button id='destroy-modal-yes-button' type="button" class="btn btn-secondary" data-dismiss="modal">YES</button>
+          <button id='destroy-modal-yes-button' type="button" class="btn btn-secondary" data-dismiss="modal">YES</button>
 
-              <button id='destroy-modal-no-button' type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+          <button id='destroy-modal-no-button' type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
 
-          </div>
-          <div class="modal-footer">
-            <button id='destroy-modal-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button id='destroy-modal-close-button' type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
 
 
-    </body>
+</body>
+
 </html>
