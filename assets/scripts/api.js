@@ -2,7 +2,6 @@ const config = require('./config')
 const store = require('./store')
 
 const signUp = function (data) {
-  console.log('api runs')
   return $.ajax({
     url: config.apiOrigin + 'sign-up',
     method: 'POST',
@@ -11,7 +10,6 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('api runs')
   return $.ajax({
     url: config.apiOrigin + 'sign-in',
     method: 'POST',
@@ -20,7 +18,6 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
-  console.log('api sucess')
   return $.ajax({
     url: config.apiOrigin + 'sign-out/' + store.user.id,
     method: 'DELETE',
@@ -31,7 +28,6 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('api sucess')
   return $.ajax({
     url: config.apiOrigin + 'change-password/' + store.user.id,
     method: 'PATCH',
@@ -43,8 +39,6 @@ const changePassword = function (data) {
 }
 
 const addToList = function (data) {
-  console.log('api sucess')
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + 'books/',
     method: 'POST',
@@ -56,7 +50,6 @@ const addToList = function (data) {
 }
 
 const returnLit = function () {
-  console.log('api sucess')
   return $.ajax({
     url: config.apiOrigin + 'books/',
     method: 'GET',
@@ -67,8 +60,6 @@ const returnLit = function () {
 }
 
 const destroyBook = function (data) {
-  console.log('api success')
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + 'books/' + data,
     method: 'DELETE',
@@ -79,9 +70,6 @@ const destroyBook = function (data) {
 }
 
 const updateBook = function (data) {
-  console.log('api success')
-  console.log(data)
-  console.log(store.id)
   return $.ajax({
     url: config.apiOrigin + 'books/' + store.id,
     method: 'PATCH',
@@ -93,7 +81,6 @@ const updateBook = function (data) {
 }
 
 const fillForm = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + 'books/' + data,
     method: 'GET',

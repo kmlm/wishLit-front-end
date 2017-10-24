@@ -5,8 +5,6 @@ const fillFormTemplate = require('./templates/input-fields.handlebars')
 
 const signUpSuccess = function (data) {
   store.user = data.user
-  console.log(data)
-  console.log(data.user)
   document.getElementById('new-user-form').reset()
   $('#sign-up-message').text('Thanks, now please sign in below!')
 }
@@ -17,10 +15,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  console.log('ui success')
   store.user = data.user
-  console.log(data)
-  console.log(data.user)
   document.getElementById('sign-in-form').reset()
   document.getElementById('sign-in-form2').reset()
   document.getElementById('sign-up-close-button').click()
@@ -45,10 +40,7 @@ const signInFailure = function () {
 }
 
 const signOutSuccess = function () {
-  console.log('ui success')
-  console.log(store.user)
   store.user = null
-  console.log(store.user)
   $('#landing-sign-in').show()
   $('#landing-sign-up').show()
   $('#landing-change-password').hide()
@@ -67,7 +59,6 @@ const signOutSuccess = function () {
 }
 
 const changePasswordSuccess = function (data) {
-  console.log('ui success')
   document.getElementById('change-password-form').reset()
   document.getElementById('change-password-close-button').click()
   $('#password-change-message').text('')
@@ -96,31 +87,23 @@ const addToListFailure = function () {
 }
 
 const returnLitSuccess = function (data) {
-  console.log('ui success')
-  console.log(data)
   $('#my-lit-button').hide()
   $('#my-list-title').text('')
   $('.content').show()
   const renderBooks = showBooksTemplate({ books: data.books })
   $('.content').html(renderBooks)
-  console.log(data.books)
   $('.cards').css('height', '50px')
 }
 
 const destroyBookSuccess = function (data) {
-  console.log(data)
-  console.log('ui ran')
   document.getElementById('my-lit-button').click()
   $('#add-message').text('Successfully Deleted!')
 }
 
-const destroyBookFailure = function (error) {
-  console.log(error)
+const destroyBookFailure = function () {
 }
 
 const updateBookSuccess = function (data) {
-  console.log(data)
-  console.log('ui ran')
   document.getElementById('update-lit-closure-button').click()
   document.getElementById('lit-update-form').reset()
   document.getElementById('my-lit-button').click()
@@ -131,23 +114,18 @@ const updateBookSuccess = function (data) {
   } else {
     $('#add-message').text(data.book.title + ' by ' + data.book.author + ' has been updated!')
   }
-  console.log(store.id)
 }
 
-const updateBookFailure = function (error) {
-  console.log(error)
+const updateBookFailure = function () {
   $('#editLitMessage').text('Make sure you have included the title!')
 }
 
 const openEditModalSuccess = function (data) {
-  console.log(data)
-  console.log('openEditModalSuccess ran')
   const fillForm = fillFormTemplate({ books: data })
   $('.modalForm').html(fillForm)
 }
 
-const openEditModalFailure = function (error) {
-  console.log(error)
+const openEditModalFailure = function () {
 }
 
 module.exports = {
