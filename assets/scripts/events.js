@@ -3,6 +3,13 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('./store')
 
+// Requiring for add lit by url
+// const PriceFinder = require("price-finder")
+// const priceFinder = new PriceFinder()
+
+
+// Functions
+
 const onSignUp = function(event) {
   event.preventDefault()
   console.log('onSignUp runs')
@@ -102,6 +109,18 @@ const editBook = function(event) {
     .catch(ui.updateBookFailure)
 }
 
+const urlToJSON = function (event) {
+  event.preventDefault()
+  console.log(this)
+  const url = getFormFields(this).book.link
+  console.log(url)
+  // priceFinder.findItemDetails(url, function(err, itemDetails) {
+  //     console.log(itemDetails.price)
+  //     console.log(itemDetails.name)
+  //     console.log(itemDetails.author)
+}
+// )}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -112,5 +131,6 @@ module.exports = {
   removeBook,
   openEditModal,
   editBook,
-  removeModal
+  removeModal,
+  urlToJSON
 }

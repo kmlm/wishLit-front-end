@@ -36,6 +36,12 @@ $(() => {
   $('.modalForm').on('submit', '#lit-update-form', events.editBook)
 })
 
+// addLit by URL
+
+$(() => {
+  $('#url-input-form').on('submit', events.urlToJSON)
+})
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
