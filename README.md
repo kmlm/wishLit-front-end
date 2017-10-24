@@ -2,10 +2,12 @@
 
 ## Summary of Project
 
-Using curl and jQuery.ajax to access an authenticated API with html forms to
-sign up, sign in, and sign out of an API. We'll also change our passwords. The
-API uses Token authentication and we'll see how to make authenticated request
-(sign out and change password).
+I am an avid reader and there are times when I hear about a book or see one advertised and I would like a place to store it. That is why I created wishLit. It is a Single Page Application that allows a user to add specific titles to a wish list with fields of title, author, link to url, and price. A user may not have all of that information, so the only requirement is that a title be entered by a user. The title is then created and assigned to the specific user ID for the user and created in the API as a row in the books table. The title is displayed in the browser using handlebars and a user is able to update or remove each entry in the list. When removing, they are prompted with verification as to whether they would like to delete a book. When editing, they are able to update the fields of the item with the current fields returned to them.
+
+This Readme focuses on the front-end of the project. The back-end API can be found here:
+
+- [API README] (https://github.com/kmlm/full-stack-project/blob/master/README.md)
+
 
 ## Wireframes
 
