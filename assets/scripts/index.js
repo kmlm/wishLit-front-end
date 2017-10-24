@@ -42,6 +42,10 @@ $(() => {
   $('.btn.btn-secondary').on('click', events.resetModals)
 })
 
+$(() => {
+  $('span').on('click', events.resetModals)
+})
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
