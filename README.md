@@ -10,11 +10,11 @@ This Readme focuses on the front-end of the project. The back-end API can be fou
 
 ## Development Process
 
-I completed the project with a one to many relationship between a user and books. The Wish list relies on the books resource and pulls individual rows from that table to display for the user.
+I completed the project with a one to many relationship between a user and books. The wish list is a representation of the books resource and pulls individual rows from that table to display for the user.
 
 After setting up the relationship between user and books in the API and establishing the routes and testing via curl scripts, I started the workflow on the Front End.
 
-I set up the page with HTML and CSS. Last project, I did not use modals and instead used different divs for login, sign up, etc. That made for a lot of hides and shows and ended up confusing me in the end when trying to troubleshoot and finish the project. This time, I decided to use modals to make life easier from that perspective. Modals were set up for Sign up, sign in, change password, addLit, and editLit. Bootstrap buttons were used for sign out, myLit, and removing lit from the list. I used form fields in the modals where a user needed to enter information and then getFormFields() in the javascript to pull that information.
+I set up the page with HTML and CSS. Last project, I did not use modals and instead used different divs for login, sign up, etc. That made for a lot of hides and shows and ended up confusing me in the end when trying to troubleshoot and finish the project. This time, I decided to use modals to make life easier from that perspective. Modals were set up for sign up, sign in, change password, addLit, and editLit. Bootstrap buttons were used for sign out, myLit, and removing lit from the list. I used form fields in the modals where a user needed to enter information and then getFormFields() in the javascript to pull that information.
 
 I set up authorization first for sign up, sign in, change password, and sign out. That process was straightforward as I was able to use code from the last project.
 
@@ -24,7 +24,7 @@ I moved on to retrieving the resources from the API with a GET request. By click
 
 I moved on to the delete request. By clicking the remove button under a specic title, the event function looks at the parent data-id of the button, which is the book id in the table and then runs an AJAX request to remove the book. I added a second modal that pops up first before running the AJAX request, which asks the user to verify that they would really like to remove the data.
 
-The PATCH request was the most difficult for me. Initially by clicking the edit button under a title, a modal popped up with a blank form with the same fields offered to the user on adding literature. This meant that a user had to re-enter all the information for a title. To prevent that, I needed to find a way to pull back the specifc information for that title and populate the completed fields. I used Show request for the specific title under the same event that opens the edit modal and then the UI used handlebars to fill in the fields that were full when the title was created. A user then only had to fill in fields that were missing or alter the fields that were already there.
+The PATCH request was the most difficult for me. Initially by clicking the edit button under a title, a modal popped up with a blank form with the same fields offered to the user on adding literature. This meant that a user had to re-enter all the information for a title. To prevent that, I needed to find a way to pull back the specifc information for that title and populate the completed fields. I used a GET request for the specific title under the same event that opens the edit modal and then the UI used handlebars to fill in the fields that were filled in when the title was created. A user then only had to fill in fields that were missing or alter the fields that were already there.
 
 After completing CRUD on the books resource, I moved onto messaging to ensure that each action taken has a corresponding UI action.
 
@@ -59,7 +59,7 @@ I used html to set up the modals, input forms, and structure of the application.
 
 ## Future Iterations
 
-After metting the initial requirements, I tried to incorporate a third party npm package called price-finder to allow for a user to simply enter a url when they click the addLit button. The package would scrape the URL for specific items and I was hoping to use it to pull out Title, Author, and Price from the page and push that information into an AJAX POST request. I wasn't able to make that work, but in the future I would like to add that functionality to make it easier for users to add items to their list.
+After meeting the initial requirements, I tried to incorporate a third party npm package called price-finder to allow for a user to simply enter a url when they click the addLit button. The package would scrape the URL for specific items and I was hoping to use it to pull out Title, Author, and Price from the page and push that information into an AJAX POST request. I wasn't able to make that work, but in the future I would like to add that functionality to make it easier for users to add items to their list.
 
 I would also like to incorporate more resources in the future. I was thinking that I could create a global resource that users could all have access to and pull books from that global resource into their individual wish lists. Another option would be a gift list where a user could add books that they were thinking about getting for others.
 
